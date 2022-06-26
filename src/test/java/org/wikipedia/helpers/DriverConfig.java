@@ -2,7 +2,10 @@ package org.wikipedia.helpers;
 
 import org.aeonbits.owner.Config;
 @Config.LoadPolicy(Config.LoadType.MERGE)
-@Config.Sources({"classpath:config.properties"})
+@Config.Sources({
+        "system:properties",
+        "classpath:properties/bStackDriver.properties"
+})
 public interface DriverConfig extends Config {
     @Key("user")
     String browserstackUser();
