@@ -4,7 +4,7 @@ import org.aeonbits.owner.Config;
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
         "system:properties",
-        "classpath:properties/bStackDriver.properties"
+        "classpath:properties/config.properties"
 })
 public interface DriverConfig extends Config {
     @Key("user")
