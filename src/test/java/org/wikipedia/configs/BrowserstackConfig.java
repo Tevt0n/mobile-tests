@@ -1,12 +1,10 @@
-package org.wikipedia.helpers;
+package org.wikipedia.configs;
 
 import org.aeonbits.owner.Config;
+
 @Config.LoadPolicy(Config.LoadType.MERGE)
-@Config.Sources({
-        "system:properties",
-        "classpath:config.properties"
-})
-public interface DriverConfig extends Config {
+@Config.Sources({"classpath:BrowserstackConfig.properties"})
+public interface BrowserstackConfig extends Config {
     @Key("user")
     String browserstackUser();
     @Key("key")

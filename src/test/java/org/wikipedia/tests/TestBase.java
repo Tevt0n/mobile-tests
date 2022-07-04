@@ -6,7 +6,8 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.wikipedia.drivers.MobileDriver;
+import org.wikipedia.drivers.BrowserstackMobileDriver;
+import org.wikipedia.drivers.LocalMobileDriver;
 import org.wikipedia.helpers.Attach;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -15,28 +16,35 @@ import static io.qameta.allure.Allure.step;
 import static org.wikipedia.helpers.Attach.sessionId;
 
 public class TestBase {
+    static String host = System.getProperty("host", "local");
+
     @BeforeAll
     public static void setup() {
-        Configuration.browser = MobileDriver.class.getName();
+        if (host.equals("local")) {
+            Configuration.browser = LocalMobileDriver.class.getName();
+        } else if (host.equals("bs")) {
+            Configuration.browser = BrowserstackMobileDriver.class.getName();
+        } else {
+            Configuration.browser = BrowserstackMobileDriver.class.getName();
+        }
         Configuration.browserSize = null;
     }
+
 
     @BeforeEach
     public void startDriver() {
         addListener("AllureSelenide", new AllureSelenide());
-
         open();
     }
 
     @AfterEach
     public void afterEach() {
         String sessionId = sessionId();
-
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
-
         step("Close driver", Selenide::closeWebDriver);
-
-        Attach.video(sessionId);
+        if (host.equals("bs")) {
+            Attach.video(sessionId);
+        }
     }
 }

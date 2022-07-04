@@ -1,15 +1,19 @@
 package org.wikipedia.helpers;
 
+import org.aeonbits.owner.ConfigFactory;
+import org.wikipedia.configs.BrowserstackConfig;
+
 import static io.restassured.RestAssured.given;
 import static java.lang.String.format;
 
-public class GetVideo {
+public class Browserstack {
 
-    public static String videoUrl(String sessionId) {
+    public static String getVideo(String sessionId) {
+        BrowserstackConfig config = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
         String url = format("https://api.browserstack.com/app-automate/sessions/%s.json", sessionId);
 
         return given()
-                .auth().basic("sergeyburmistrov_A82pwk", "1NiPAqNAFTco7tjsL6Ay")
+                .auth().basic(config.browserstackUser(), config.browserstackKey())
                 .log().all()
                 .when()
                 .get(url)
