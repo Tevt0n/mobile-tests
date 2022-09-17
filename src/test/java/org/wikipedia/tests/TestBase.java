@@ -16,7 +16,7 @@ import static io.qameta.allure.Allure.step;
 import static org.wikipedia.helpers.Attach.sessionId;
 
 public class TestBase {
-    static String host = System.getProperty("host", "local");
+    static String host = System.getProperty("host", "bs");
 
     @BeforeAll
     public static void setup() {

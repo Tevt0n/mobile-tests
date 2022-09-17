@@ -1,29 +1,15 @@
 package org.wikipedia.tests;
 
-import com.codeborne.selenide.CollectionCondition;
 import io.appium.java_client.AppiumBy;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
 import static io.qameta.allure.Allure.step;
 
-public class MobileTests extends TestBase {
-    @Test
-    @DisplayName("Verify search is working")
-    void verifySearchIsWorking() {
-        back();
-        step("Type search", () -> {
-            $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
-            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("BrowserStack");
-        });
-        step("Verify content found", () ->
-                $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
-                        .shouldHave(CollectionCondition.sizeGreaterThan(0)));
-    }
-
+public class OnboardingTests extends TestBase {
     @Test
     @DisplayName("Pass onboarding screen")
     void passOnboardingScreen() {
@@ -34,9 +20,9 @@ public class MobileTests extends TestBase {
         });
         step("Check second page", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView"))
-                            .shouldHave(text("New ways to explore"));
+                    .shouldHave(text("New ways to explore"));
             $(AppiumBy.id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
-                });
+        });
         step("Check third page", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView"))
                     .shouldHave(text("Reading lists with sync"));
