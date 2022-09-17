@@ -1,14 +1,14 @@
 # Automated mobile tests for Wikipedia app on Android
 
-## :tv: Contents
+## :page_with_curl: Contents
 
-- <a href="#tv-technology-stack">Technology stack</a>
-- <a href="#tv-launch">Launch</a>
-- <a href="#tv-jenkins-build">Jenkins build</a>
-- <a href="#tv-Test-results-report-in-Allure-Report">Test results report in Allure Report</a>
-- <a href="#tv-Video-attach-example">Video attach example</a>
+- <a href="#-technology-stack">Technology stack</a>
+- <a href="#-launch">Launch</a>
+- <a href="#-jenkins-buildd">Jenkins build</a>
+- <a href="#-Test-results-report-in-Allure-Report">Test results report in Allure Report</a>
+- <a href="#-Video-attach-example">Video attach example</a>
 
-## :tv: Technology stack
+## :computer: Technology stack
 
 <p align="center">
 <img width="6%" title="IntelliJ IDEA" src="images/logos/Intelij_IDEA.svg">
@@ -23,7 +23,7 @@
 <img width="6%" title="Allure TestOps" src="images/logos/Allure_TO.svg">
 </p>
 
-## :tv: Launch
+## :technologist: Launch
 
 ### To launch tests remotely on Browserstack use the following command:
 
