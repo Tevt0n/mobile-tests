@@ -33,7 +33,7 @@ gradle clean test
 
 ### Launch tests on the local machine with emulation
 
-You must have Android Studio and Appium installed and configured, and edit LocalConfig.properties file to match device and OS version yours emulation device.
+You must have Android Studio and Appium installed and configured, and edit LocalConfig.properties file to match device and OS version strings with your emulation device.
 To launch test locally use the following command:
 
 ```
