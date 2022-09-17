@@ -2,9 +2,9 @@
 
 ## :page_with_curl: Contents
 
-- <a href="#-technology-stack">Technology stack</a>
-- <a href="#-launch">Launch</a>
-- <a href="#-jenkins-buildd">Jenkins build</a>
+- <a href="#computer-technology-stack">Technology stack</a>
+- <a href="#technologist-launch">Launch</a>
+- <a href="#-jenkins-build">Jenkins build</a>
 - <a href="#-Test-results-report-in-Allure-Report">Test results report in Allure Report</a>
 - <a href="#-Video-attach-example">Video attach example</a>
 
